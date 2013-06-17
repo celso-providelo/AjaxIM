@@ -77,7 +77,7 @@ if ('development' == app.get('env')) {
         }
     });
 
-    app.use(express.logger());
+    app.use(express.logger('dev'));
     require('./dev/app')('/dev', app);
     app.use(express.static(
                 require('path').join(__dirname, '../client')));
@@ -90,13 +90,18 @@ app.listen(APP_PORT, APP_HOST);
 app.get('/listen', function(){});
 
 app.post('/message', function(req, res) {
+        var util = require('util');
+        console.log('REQ:');
+        console.log('From: %s', req.session.data('username'));
+        console.log(util.inspect(req.body, { showHidden: true, depth: null }));
+
     res.find(req.body['to'], function(user) {
         if(!user)
             return res.send(new packages.Error('not online'));
 
         res.message(user, new packages.Message(
             req.session.data('username'),
-            req.body.body
+            req.body.body + ' zoing!'
         ));
     });
 });

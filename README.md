@@ -34,13 +34,14 @@ Install Node Package Manager (`npm`):
 
 Install `Express.js`, `Connect` and `Cookie`:
 
-    npm install express
-    npm install connect
+    npm install express@3.2.0
+    npm install connect@2.7.8
     npm install cookie
 
 Compile the daemon add-on if you plan on letting the server daemonize itself:
 
     cd server/libs/daemon
+    export NODE_PATH="/usr/lib/nodejs/"
     node-waf configure build
     cp build/default/daemon.node .
     rm -rf build
@@ -52,7 +53,7 @@ to install [`Jade`](http://github.com/visionmedia/jade) as well.
 
 To install `Jade`:
 
-    npm install jade
+    npm install jade@0.29.0
 
 ## Starting up the server
 

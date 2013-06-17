@@ -7,8 +7,8 @@
 // === Host and Port ===
 //
 // Define the host and port that Ajax IM will run on.
-APP_HOST = 'localhost';
-APP_PORT = 8000;
+APP_HOST = '0.0.0.0';
+APP_PORT = 8001;
 
 // === Authentication Library ===
 //

@@ -7,7 +7,7 @@ exports.authenticate = function(request, callback) {
     // On failure, redirect user to auth form
 
     callback({
-        username: 'username' + Math.floor(Math.random() * 10),
+        username: 'username' + Math.floor(Math.random() * 4),
         displayname: 'John Smith',
         otherinfo: 'any other relevant key/values'
     });
@@ -23,10 +23,5 @@ exports.friends = function(request, data, callback) {
         'username2',
         'username3',
         'username4',
-        'username5',
-        'username6',
-        'username7',
-        'username8',
-        'username9'
     ]);
 };
